@@ -1,0 +1,8 @@
+﻿{	
+	javascript:[
+		"/app_plugins/tooorangey.uSpinMeRightRound/selectrotation.controller.js"	
+	],
+	css:[
+	"/app_plugins/tooorangey.uSpinMeRightRound/uSpinMeRightRound.css"
+	]
+}
