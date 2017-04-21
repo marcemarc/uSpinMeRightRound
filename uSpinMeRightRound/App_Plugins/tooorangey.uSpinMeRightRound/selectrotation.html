@@ -2,7 +2,7 @@
     <div class="umb-dialog-body">
         <div ng-show="!vm.status.isSelectionMode" class="umb-pane">
             <h2 class="title">Rotating...</h2>
-            <img class="rotating-image" src="/app_plugins/tooorangey.uSpinMeRightRound/black-peck-crow.png" />
+            <img class="rotating-image" src="/app_plugins/tooorangey.uSpinMeRightRound/spinner.png" />
         </div>
         <div ng-show="vm.status.isSelectionMode" class="umb-pane">
             <p class="abstract">Select Orientation for <b>{{vm.mediaInfo.imageName}}</b></p>
@@ -15,7 +15,7 @@
                                 <small class="ng-binding"></small>
                             </label>
                             <div class="controls controls-row">
-                                <input type="checkbox" ng-model="vm.createNewMediaItem" class="ng-scope ng-valid">
+                                <input type="checkbox" ng-model="vm.status.createNewMediaItem" class="ng-scope ng-valid">
                             </div>
                         </div>
                     </div>
@@ -27,8 +27,7 @@
                 <div style="position:relative;display:inline-block">
                     <i ng-show="vm.status.selected == i" class="icon-check checkmark"></i>
                     <img ng-click="vm.selectRotation(i)" class="center-block" src="{{vm.mediaInfo.filePath}}?{{vm.status.resize}}&pirouette={{i}}&rnd={{vm.getDateTime() | date:'yyyyMMddTHHmmss'}}" />
-                </div>
-                    <!--<a class="btn btn-primary" ng-click="vm.selectRotation(i)">Rotate {{i*90}}&deg;</a>-->
+                </div>                 
             
             </div>
 

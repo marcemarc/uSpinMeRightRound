@@ -267,7 +267,6 @@
     <Compile Include="Models\MemoryStreamPostedFile.cs" />
     <Compile Include="Processors\Pirouette.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\ImageFanglingService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

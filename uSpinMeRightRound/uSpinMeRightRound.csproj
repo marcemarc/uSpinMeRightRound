@@ -303,7 +303,7 @@
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.controller.js" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.htm" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.resource.js" />
-    <Content Include="App_Plugins\tooorangey.uSpinMeRightRound\dialog.html" />
+    <Content Include="App_Plugins\tooorangey.uSpinMeRightRound\spinner.png" />
     <Content Include="App_Plugins\tooorangey.uSpinMeRightRound\selectrotation.controller.js" />
     <Content Include="App_Plugins\tooorangey.uSpinMeRightRound\selectrotation.html" />
     <Content Include="App_Plugins\tooorangey.uSpinMeRightRound\uSpinMeRightRound.css" />
@@ -412,7 +412,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>49370</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:49382/</IISUrl>
+          <IISUrl>http://localhost:49399/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

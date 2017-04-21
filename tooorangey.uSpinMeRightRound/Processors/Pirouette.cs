@@ -23,7 +23,7 @@ namespace tooorangey.uSpinMeRightRound.Processors
     {
         /// The regular expression to search strings for.
         /// </summary>
-        private static readonly Regex QueryRegex = new Regex(@"pirouette=[^&]", RegexOptions.Compiled);
+        private static readonly Regex QueryRegex = new Regex(@"pirouette=[1|2|3]", RegexOptions.Compiled);
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Rotate"/> class.
@@ -57,8 +57,6 @@ namespace tooorangey.uSpinMeRightRound.Processors
             }
         }
 
-
-
         /// <summary>
         /// The position in the original string where the first character of the captured substring was found.
         /// </summary>
@@ -82,17 +80,23 @@ namespace tooorangey.uSpinMeRightRound.Processors
                 // we are expecting either 1, 2 or 3 quarter turns on the querystring
                 // need to pass these into underlying image processor rotate as float values
                 // assume 90 degrees
-                var quarterTurns = QueryParamParser.Instance.ParseValue<int>(queryCollection["pirouette"]); //% 4; sadly this still creates an image on disc for querystring numbers greater than 3
-                if (quarterTurns < 4)
+                var quarterTurns = QueryParamParser.Instance.ParseValue<int>(queryCollection["pirouette"]);
+                //make sure versions not created for other numbers 
+                switch (quarterTurns)
                 {
-                    var rotateDegrees = (float)(quarterTurns * 90);
-                    this.Processor.DynamicParameter = rotateDegrees;
+                    case 1:
+                    case 2:
+                    case 3:
+                        var rotateDegrees = (float)(quarterTurns * 90);
+                        this.Processor.DynamicParameter = rotateDegrees;
+                        break;
+
+                    default:
+                        //do no rotatings
+                        break;
                 }
             }
-
             return this.SortOrder;
         }
-
-
     }
 }

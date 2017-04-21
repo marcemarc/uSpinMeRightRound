@@ -1,17 +1,16 @@
-﻿angular.module("umbraco").controller("tooorangey.SelectRotationController", function ($scope, $http, entityResource, mediaHelper, navigationService,notificationsService) {
+﻿angular.module("umbraco").controller("tooorangey.SelectRotationController", function ($scope, $http, entityResource, mediaHelper, navigationService, notificationsService, $location) {
     
     var vm = this;
 
     vm.mediaInfo = {
         filePath:'',
         imageName:'',
-        mediaId: 0,
-        thumbPath: ''
+        mediaId: 0
     };
 
     vm.status = {
         hasImage: false,
-        resize: 'width=300',
+        resize: 'width=200',
         selected: 1,
         isSelectionMode: true,
         createNewMediaItem: false
@@ -25,23 +24,21 @@
 
     // use entity resource to pull back it's url
     entityResource.getById(currentMediaItem.id, "media").then(function (mediaEntity) {
-        console.log(mediaEntity);
+        //console.log(mediaEntity);
         vm.mediaInfo.imageName = mediaEntity.name;
         if (mediaEntity.metaData.umbracoHeight.Value > mediaEntity.metaData.umbracoWidth.Value){
             
-            vm.status.resize = 'height=325'
+            vm.status.resize = 'height=225'
         }
         var mediaFile = mediaHelper.resolveFileFromEntity(mediaEntity, false);
-            console.log(mediaFile);
+            //console.log(mediaFile);
             vm.mediaInfo.filePath = mediaFile;
-            vm.mediaInfo.thumbPath = mediaFile.replace(".", "_big - thumb.")
+
     });
   
     // write out rotated versions of the images
-    // clicking the rotation (perhaps use radio button) and button
-    // causes loading snake to appear
     // sends selected rotation and media id to api controller
-    // that does the rotation, saves the rotated image over the existing
+    // that does the rotation, saves the rotated image in media item or new media item
     // updates width and height
     // then reloads the page.
 
@@ -67,16 +64,22 @@
                     headers: {
                         'Content-Type': 'application/json'
                     }
-                }).then(function (response) {
-                    //stop animation thing
-                    // confirm rotation has occurred
+                }).then(function (response) {               
+                   // console.log(response);
                     // close the slide out box
                     navigationService.hideDialog();
          
-                    // reload the page
-                    window.location.reload(true);
+                    // reload the media node
+                    if (currentMediaItem.id != response.data) {
+                        $location.path('media/media/edit/' + response.data);
+                    }
+                    else {
+                        window.location.reload(true);
+                    }
+              
                 }, function (response) {
-                    console.log(response);
+                    //console.log(response);
+                    //notify errors
                     navigationService.hideDialog();
                     notificationsService.remove(0);
                     notificationsService.error("Error Rotating Image", response.data.Message);
