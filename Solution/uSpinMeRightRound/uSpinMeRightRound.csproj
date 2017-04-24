@@ -358,7 +358,9 @@
     <Content Include="Views\Partials\Grid\Bootstrap2.cshtml" />
     <Content Include="Views\Partials\Grid\Bootstrap2-Fluid.cshtml" />
     <Content Include="Media\Web.config" />
-    <Content Include="config\umbracoSettings.config" />
+    <Content Include="config\umbracoSettings.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="config\trees.config" />
     <Content Include="config\tinyMceConfig.config" />
     <Content Include="config\scripting.config" />
@@ -385,6 +387,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\" />
+    <Folder Include="HealthCheck\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
