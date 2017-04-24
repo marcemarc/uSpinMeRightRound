@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>tooorangey.uSpinMeRightRound</id>
+    <version>1.0.0</version>
+    <authors>marcemarc</authors>
+    <owners>marcemarc</owners>
+    <projectUrl>http://our.umbraco.org/projects/backoffice-extensions/uSpinMeRightRound</projectUrl>
+    <iconUrl>http://tooorangey.co.uk/media/1100/uspinmerightroundlogo128.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Adds rotate menu item for images in the media section of Umbraco to enable editors to rotate images by 90,180 or 270 degrees.</description>
+    <releaseNotes>First release</releaseNotes>
+    <copyright>Copyright 2017</copyright>
+    <tags>Umbraco</tags>
+    <dependencies></dependencies>
+  </metadata>
+</package>

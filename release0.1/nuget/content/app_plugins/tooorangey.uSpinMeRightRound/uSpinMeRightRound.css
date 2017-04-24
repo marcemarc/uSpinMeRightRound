@@ -1,0 +1,55 @@
+﻿.rotation-picker .center-block {
+    margin:auto;
+    text-align:center;
+    display:block;
+}
+.rotation-picker .rotate-option{
+    padding-bottom:1em;
+    border-top: 1px solid #dddddd;
+    margin-top:1em;
+}
+
+.rotation-picker i.checkmark {
+
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 2;
+    display: -ms-flexbox;
+    display: flex;
+    width: 26px;
+    height: 26px;
+    margin-left: 7px;
+    color: #fff;
+    background: #35c786;
+    border: 2px solid #fff;
+    border-radius: 50px;
+    box-sizing: border-box;
+    transition: background 100ms;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.rotation-picker  h3 {padding-left:10px}
+.rotation-picker .selected h3 {
+background-color:#00aea2;
+color:#ffffff;
+
+
+}
+.rotation-picker .rotating-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120px;
+    height: 120px;
+    margin:-60px 0 0 -60px;
+    -webkit-animation:spin 1s linear infinite;
+    -moz-animation:spin 1s linear infinite;
+    animation:spin 1s linear infinite;
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
