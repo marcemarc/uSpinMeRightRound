@@ -264,9 +264,6 @@
   <ItemGroup>
     <Compile Include="App_Start\RegisterEvents.cs" />
     <Compile Include="Controllers\PirouetteController.cs" />
-    <Compile Include="HealthCheck\DistributedCalls.cs" />
-    <Compile Include="HealthCheck\ScheduledPublishing.cs" />
-    <Compile Include="HealthCheck\ScheduledPublishingHealthCheck.cs" />
     <Compile Include="Models\MemoryStreamPostedFile.cs" />
     <Compile Include="Processors\Pirouette.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
