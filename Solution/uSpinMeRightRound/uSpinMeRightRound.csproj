@@ -377,6 +377,8 @@
     <Content Include="config\applications.config" />
     <Content Include="config\404handlers.config" />
     <Content Include="App_Plugins\tooorangey.uSpinMeRightRound\package.manifest" />
+    <Content Include="App_Plugins\tooorangey.uSpinMeRightRound\install\processing.config.install.xdt" />
+    <Content Include="App_Plugins\tooorangey.uSpinMeRightRound\install\processing.config.uninstall.xdt" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -395,7 +397,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\tooorangey.uSpinMeRightRound\tooorangey.uSpinMeRightRound.csproj">
-      <Project>{2cb5887b-2c48-4305-ac11-006b13eb14db}</Project>
+      <Project>{656fd795-bb6e-4715-81a0-521671a54b27}</Project>
       <Name>tooorangey.uSpinMeRightRound</Name>
     </ProjectReference>
   </ItemGroup>

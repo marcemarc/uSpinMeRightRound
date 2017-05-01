@@ -44,7 +44,7 @@ namespace tooorangey.uSpinMeRightRound.Controllers
 
             //read in the filepath from umbracoFile
             var filePath = String.Empty;
-            if (umbracoFile.DetectIsJson())
+            if (umbracoFile.DetectIsJsonish())
             {                
                 isCropper = true;
                 try
