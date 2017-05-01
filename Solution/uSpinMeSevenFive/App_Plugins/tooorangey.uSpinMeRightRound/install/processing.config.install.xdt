@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<processing xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+<plugins>
+<plugin name="Pirouette" type="tooorangey.uSpinMeRightRound.Processors.Pirouette, tooorangey.uSpinMeRightRound" enabled="true" xdt:Transform="Insert" />
+</plugins>
+  </processing>

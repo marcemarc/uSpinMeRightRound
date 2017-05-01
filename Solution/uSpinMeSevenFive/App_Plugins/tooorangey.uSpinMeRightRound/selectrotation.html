@@ -1,0 +1,40 @@
+﻿<div class="umb-editor umb-mediapicker rotation-picker" ng-controller="tooorangey.SelectRotationController as vm">
+    <div class="umb-dialog-body">
+        <div ng-show="!vm.status.isSelectionMode" class="umb-pane">
+            <h2 class="title">Rotating...</h2>
+            <img class="rotating-image" src="/app_plugins/tooorangey.uSpinMeRightRound/spinner.png" />
+        </div>
+        <div ng-show="vm.status.isSelectionMode" class="umb-pane">
+            <p class="abstract">Select Orientation for <b>{{vm.mediaInfo.imageName}}</b></p>
+            <div class="umb-pane">
+                <div class="umb-property">
+                    <div class="control-group umb-control-group">
+                        <div class="umb-el-wrap">
+                            <label class="control-label" style="float:left" for="">
+                                Create new Media Item
+                                <small class="ng-binding"></small>
+                            </label>
+                            <div class="controls controls-row">
+                                <input type="checkbox" ng-model="vm.status.createNewMediaItem" class="ng-scope ng-valid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="rotate-option" ng-repeat="i in [1,2,3]" ng-class="{'selected': vm.status.selected == i}">
+
+                <h3 ng-click="vm.selectRotation(i)"><i class="fa fa-share fa-rotate-{{(i-1)*90}}"></i> {{i*90}}&deg; <span ng-show="vm.status.selected == i"> - selected</span></h3>
+                <div style="position:relative;display:inline-block">
+                    <i ng-show="vm.status.selected == i" class="icon-check checkmark"></i>
+                    <img ng-click="vm.selectRotation(i)" class="center-block" src="{{vm.mediaInfo.filePath}}?{{vm.status.resize}}&pirouette={{i}}&rnd={{vm.getDateTime() | date:'yyyyMMddTHHmmss'}}" />
+                </div>                 
+            
+            </div>
+
+            </div>
+        </div>
+    <div  class="umb-dialog-footer btn-toolbar umb-btn-toolbar" ng-hide="success">
+        <a class="btn btn-link" ng-click="nav.hideDialog()">Cancel</a>
+        <button ng-show="vm.status.isSelectionMode" class="btn btn-primary" ng-click="vm.rotate()">Rotate {{vm.status.selected*90}}&deg;</button>
+    </div>
+</div>
